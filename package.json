@@ -1,14 +1,19 @@
 {
-  "name": "npm-package-starter",
+  "name": "npm-cli-starter",
   "version": "0.0.0",
-  "description": "Javascript + Webpack vanilla starter project",
+  "description": "TypeScript NPM CLI Package Starter",
   "public": true,
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "files": [
     "build"
   ],
+  "bin": {
+    "npm-cli-starter": "build/index.js"
+  },
+  "type": "module",
   "scripts": {
+    "dev": "npm run watch:compile",
     "compile:tests": "tsc --project tsconfig.test.json",
     "compile:package": "tsc --project tsconfig.json",
     "compile": "npm run compile:tests && npm run compile:package",
@@ -59,5 +64,7 @@
     "typescript": "4.3.2",
     "wait-on": "6.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "meow": "10.1.1"
+  }
 }
